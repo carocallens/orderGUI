@@ -1,0 +1,9 @@
+<div *ngIf="item">
+  <h2>{{item.name}}</h2>
+  <div><span>id: </span> {{item.id}}</div>
+  <div><span>name: </span> {{item.name}}</div>
+  <div><span>description: </span> {{item.description}}</div>
+  <div><span>price: </span> {{item.price}}</div>
+  <div><span>amount of stock: </span> {{item.amountOfStock}}</div>
+  <button type = "submit"><a routerLink="/update/{{item.id}}">Edit</a></button>
+</div>

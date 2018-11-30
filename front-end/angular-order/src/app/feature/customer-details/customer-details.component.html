@@ -1,0 +1,16 @@
+<div *ngIf="customer">
+    <h2>{{customer.firstName}} {{customer.lastName}}</h2>
+    <div><span>id: </span> {{customer.id}}</div>
+    <div><span>first name: </span> {{customer.firstName}}</div>
+    <div><span>last name: </span> {{customer.lastName}}</div>
+    <div><span>street name: </span> {{customer.address.streetName}}</div>
+    <div><span>house number: </span> {{customer.address.houseNumber}}</div>
+    <div><span>postal code: </span> {{customer.address.postalCode}}</div>
+    <div><span>country: </span> {{customer.address.country}}</div>
+    <div><span>email local: </span> {{customer.email.localPart}}</div>
+    <div><span>email domain: </span> {{customer.email.domain}}</div>
+    <div><span>email complete: </span> {{customer.email.complete}}</div>
+    <div><span>phone country code: </span> {{customer.phoneNumber.countryCallingCode}}</div>
+    <div><span>phone number: </span> {{customer.phoneNumber.number}}</div>
+  </div>
+  

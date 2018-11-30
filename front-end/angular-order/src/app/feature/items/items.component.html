@@ -1,0 +1,13 @@
+<h2>Items</h2>
+
+<div class="container">
+  <div *ngFor="let item of items" class="row">
+    <span class="col">
+        <a routerLink="/itemdetail/{{item.id}}" class="itemlink">
+      <p class="itemname">{{item.name}}</p>
+      <img class="itemimage" src="../assets/images/order.png" />
+      <p class="price">PRICE: €{{item.price}}</p>
+    </a>
+    </span>
+  </div>
+</div>

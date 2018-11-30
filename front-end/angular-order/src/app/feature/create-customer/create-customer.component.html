@@ -1,0 +1,61 @@
+<h1>Create Customer</h1>
+<form [formGroup]="customerForm" (ngSubmit)="createCustomer()">
+  <div class="form-group">
+    <label>
+      First Name:
+      <input type="text" formControlName="firstName" class="form-control">
+    </label>
+
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName" class="form-control">
+    </label>
+    <div formGroupName="address" class="form-group">
+      <h3>Address</h3>
+      <label>
+        Street name:
+        <input type="text" formControlName="streetName" class="form-control">
+      </label>
+      <label>
+        House number:
+        <input type="text" formControlName="houseNumber" class="form-control">
+      </label>
+      <label>
+        Postal Code:
+        <input type="text" formControlName="postalCode" class="form-control">
+      </label>
+      <label>
+        Country:
+        <input type="text" formControlName="country" class="form-control">
+      </label>
+    </div>
+    <div formGroupName="email" class="form-group">
+      <h3>E-mail</h3>
+      <label>
+        Local Part:
+        <input type="text" formControlName="localPart" class="form-control">
+      </label>
+      <label>
+        Domain:
+        <input type="text" formControlName="domain" class="form-control">
+      </label>
+      <label>
+        Complete:
+        <input type="text" formControlName="complete" class="form-control">
+      </label>
+    </div>
+    <div formGroupName="phoneNumber" class="form-group">
+      <h3>Phone Number</h3>
+      <label>
+        Phone country code:
+        <input type="text" formControlName="countryCallingCode" class="form-control">
+      </label>
+      <label>
+        Phonenumber:
+        <input type="text" formControlName="number" class="form-control">
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+  <button type="reset" class="btn btn-default pull-right"><a routerLink="/customers">Cancel</a></button>
+</form>
