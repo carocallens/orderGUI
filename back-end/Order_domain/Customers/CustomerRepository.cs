@@ -23,6 +23,7 @@ namespace Order_domain.Customers
 
         public Customer Update(Customer entity)
         {
+            _dBContext.Customers.Update(entity);
             _dBContext.SaveChanges();
             return entity;
         }
@@ -31,7 +32,7 @@ namespace Order_domain.Customers
         {
             return _dBContext.Customers
                 .AsNoTracking()
-                .Single(item => item.Id.Equals(entityId));
+                .Single(customer => customer.Id.Equals(entityId));
         }
 
         public IList<Customer> GetAll()

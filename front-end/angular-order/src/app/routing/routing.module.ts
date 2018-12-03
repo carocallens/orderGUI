@@ -8,15 +8,19 @@ import { ItemsComponent } from '../feature/items/items.component';
 import { CustomersComponent } from '../feature/customers/customers.component';
 import { CreateCustomerComponent } from '../feature/create-customer/create-customer.component';
 import { CustomerDetailsComponent } from '../feature/customer-details/customer-details.component';
+import { UpdateCustomerComponent } from '../feature/update-customer/update-customer.component';
+import { ShoppingCartDetailsComponent } from '../feature/shopping-cart-details/shopping-cart-details.component';
 
 const routes: Routes= [
   { path: 'items', component: ItemsComponent},
   { path: 'createitem', component: CreateItemComponent},
   { path:'itemdetail/:id', component: ItemDetailsComponent},
-  { path: 'update/:id', component: UpdateItemComponent},
+  { path: 'itemupdate/:id', component: UpdateItemComponent},
+  {path: 'customerupdate/:id', component: UpdateCustomerComponent},
   { path: 'customers', component: CustomersComponent},
   { path: 'createcustomer', component: CreateCustomerComponent},
-  { path: 'customerdetail/:id', component: CustomerDetailsComponent}
+  { path: 'customerdetail/:id', component: CustomerDetailsComponent},
+  { path: 'shoppingcart', component: ShoppingCartDetailsComponent}
 ];
 
 

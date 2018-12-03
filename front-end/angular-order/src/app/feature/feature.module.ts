@@ -8,7 +8,10 @@ import { ItemsComponent } from './items/items.component';
 import { CustomersComponent } from './customers/customers.component';
 import { SearchFilterPipe } from './search-filter.pipe';
 import { CreateCustomerComponent } from './create-customer/create-customer.component';
-import { CustomerDetailsComponent } from './customer-details/customer-details.component'
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+import { UpdateCustomerComponent } from './update-customer/update-customer.component';
+import { ShoppingCartDetailsComponent } from './shopping-cart-details/shopping-cart-details.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
     CustomersComponent,
     SearchFilterPipe,
     CreateCustomerComponent,
-    CustomerDetailsComponent
+    CustomerDetailsComponent,
+    UpdateCustomerComponent,
+    ShoppingCartDetailsComponent,
   ],
   imports: [
     CoreModule,

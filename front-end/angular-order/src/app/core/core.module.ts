@@ -5,6 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CustomerService } from './customers/customer.service';
+import { ShoppingCartService } from './orders/shopping-cart.service';
+import { OrderService } from './orders/order.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CustomerService } from './customers/customer.service';
   ],
   providers: [
     ItemService,
-    CustomerService
+    CustomerService,
+    ShoppingCartService,
+    OrderService
   ]
 })
 export class CoreModule { }

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Item } from 'src/app/core/items/item';
 import { ItemService } from 'src/app/core/items/item.service';
 import { ActivatedRoute } from '@angular/router';
+import { FormControl, Validators } from '@angular/forms';
+import { ShoppingCart } from 'src/app/core/orders/shopping-cart';
+import { ShoppingCartService } from 'src/app/core/orders/shopping-cart.service';
 
 @Component({
   selector: 'app-item-details',
@@ -11,16 +14,25 @@ import { ActivatedRoute } from '@angular/router';
 export class ItemDetailsComponent implements OnInit {
 
   item: Item;
-  constructor(private itemService: ItemService, private route: ActivatedRoute) { }
+  itemAmount = new FormControl('0', [Validators.min(1), Validators.pattern('^[0-9]*$')]);
 
-  ngOnInit(){
+  constructor(private itemService: ItemService, private route: ActivatedRoute, private shoppingcartService: ShoppingCartService) { }
+
+  ngOnInit() {
     this.getItem();
   }
 
-  getItem(): void{
-    
+  getItem(): void {
+
     const id = this.route.snapshot.paramMap.get('id');
     this.itemService.getItem(id)
-    .subscribe(item => this.item = item);
+      .subscribe(item => this.item = item);
+  }
+
+  addToCart(): void {
+    this.shoppingcartService.addToCart({
+      itemId: this.item.id,
+      orderedAmount: this.itemAmount.value
+    });
   }
 }

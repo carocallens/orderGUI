@@ -5,5 +5,10 @@
   <div><span>description: </span> {{item.description}}</div>
   <div><span>price: </span> {{item.price}}</div>
   <div><span>amount of stock: </span> {{item.amountOfStock}}</div>
-  <button type = "submit"><a routerLink="/update/{{item.id}}">Edit</a></button>
+  <div class="form-group">
+    <label for="InputAmountOfStock">Amount</label>
+    <input type="text" [formControl] = 'itemAmount' class="form-control" id="InputAmount">
+</div>
+  <button type = "submit"><a routerLink="/itemupdate/{{item.id}}">Edit</a></button>
+  <button class = "test" (click)="addToCart()">Add to Cart</button>
 </div>

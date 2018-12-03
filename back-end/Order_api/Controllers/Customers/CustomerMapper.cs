@@ -1,9 +1,9 @@
-﻿using System;
-using Order_infrastructure.dto;
-using Order_api.Controllers.Customers.Addresses;
+﻿using Order_api.Controllers.Customers.Addresses;
 using Order_api.Controllers.Customers.Emails;
 using Order_api.Controllers.Customers.PhoneNumbers;
 using Order_domain.Customers;
+using Order_infrastructure.dto;
+using System;
 
 namespace Order_api.Controllers.Customers
 {
@@ -42,6 +42,29 @@ namespace Order_api.Controllers.Customers
                 .WithEmail(_emailMapper.ToDomain(customerDto.Email))
                 .WithPhoneNumber(_phoneNumberMapper.ToDomain(customerDto.PhoneNumber))
                 .Build();
+        }
+
+        public Customer ToDomainForUpdate(Guid customerId, CustomerDto customerDto)
+        {
+            if (customerId != new Guid(customerDto.Id))
+            {
+                throw new ArgumentException(
+                    "When updating a customer, the provided ID in the path should match the ID in the body: " +
+                    "ID in path = " + customerId.ToString("N") + ", ID in body = " + customerDto.Id);
+            }
+            return ToDomainForUpdate(customerDto);
+        }
+
+        private Customer ToDomainForUpdate(CustomerDto customerDto)
+        {
+            return Customer.CustomerBuilder.Customer()
+            .WithId(new Guid(customerDto.Id))
+            .WithLastname(customerDto.LastName)
+            .WithFirstname(customerDto.FirstName)
+            .WithAddress(_addressMapper.ToDomain(customerDto.Address))
+            .WithEmail(_emailMapper.ToDomain(customerDto.Email))
+            .WithPhoneNumber(_phoneNumberMapper.ToDomain(customerDto.PhoneNumber))
+            .Build();
         }
     }
 }

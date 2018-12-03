@@ -32,12 +32,20 @@ namespace Order_api.Controllers.Customers
         {
             return _customerService.GetAllCustomers().Select(customer => _customerMapper.ToDto(customer)).ToList();
         }
-        
+
         [HttpGet("{id}")]
         public CustomerDto GetCustomer([FromRoute]string id)
         {
             return _customerMapper.ToDto(
                 _customerService.GetCustomer(new Guid(id)));
+        }
+
+        [HttpPut("{id}")]
+        public CustomerDto UpdateCustomer([FromRoute] string id, [FromBody] CustomerDto customerDto)
+        {
+            return _customerMapper.ToDto(
+                _customerService.UpdateCustomer(
+                    _customerMapper.ToDomainForUpdate(new Guid(id), customerDto)));
         }
     }
 }

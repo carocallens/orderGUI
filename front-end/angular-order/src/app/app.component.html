@@ -1,4 +1,6 @@
-<a routerLink="/items"><img src="../assets/images/order.png" class="logo"></a>
-<app-header></app-header>
+<section class="web_homePage" (scroll)="onWindowScroll($event);">
+    <a routerLink="/items"><img src="../assets/images/orderlogo.png" class="logo"></a>
+    <app-header></app-header>
 
-<router-outlet></router-outlet>
+    <router-outlet ></router-outlet>
+</section>

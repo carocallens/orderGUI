@@ -35,5 +35,25 @@ namespace Order_service.Customers
         {
             return _customerRepository.Get(id);
         }
+
+        public Customer UpdateCustomer(Customer customer)
+        {
+            if (!_customerValidator.IsValidForUpdating(customer))
+            {
+                _customerValidator.ThrowInvalidOperationException(customer, "updating");
+            }
+            MapUpdatedValuesToPersistedCustomer(customer);
+            return _customerRepository.Update(customer);
+        }
+
+        private void MapUpdatedValuesToPersistedCustomer(Customer customer)
+        {
+            var persistedEntity = _customerRepository.Get(customer.Id);
+            persistedEntity.FirstName = customer.FirstName;
+            persistedEntity.LastName = customer.LastName;
+            persistedEntity.Email = customer.Email;
+            persistedEntity.Address = customer.Address;
+            persistedEntity.PhoneNumber = customer.PhoneNumber;
+        }
     }
 }

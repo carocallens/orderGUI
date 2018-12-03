@@ -16,7 +16,6 @@ export class UpdateItemComponent implements OnInit {
   private sub: any;
   id: string;
   item$: Observable<Item>;
-  item: Item;
   
   updateItemForm = new FormGroup(
     {

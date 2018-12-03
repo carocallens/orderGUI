@@ -11,5 +11,6 @@ namespace Order_service.Customers
         IEnumerable<Customer> GetAllCustomers();
 
         Customer GetCustomer(Guid id);
+        Customer UpdateCustomer(Customer customer);
     }
 }

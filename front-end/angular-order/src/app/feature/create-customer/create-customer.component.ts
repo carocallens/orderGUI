@@ -36,6 +36,6 @@ export class CreateCustomerComponent implements OnInit {
 
   createCustomer(): void{
     this.customerService.createCustomer(this.customerForm.value)
-    .subscribe();
+    .subscribe(customer => window.location.href = `/customerdetail/${customer.id}`);
   }
 }

@@ -1,7 +1,37 @@
-.btn{
+button.btn{
+    font-style: roboto, sans-serif;
     position: relative;
+    background-color: #0063B3;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    padding: 10px;
+    font-size: 1.3em;
+}
+
+#navbar
+{
+    width: 100%;
+    background-color: #0063B3;
+    height: 55px;
+}
+
+.sticky
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, .08);
+}
+
+button.btn:hover {
+    background-color: #5aaded;
+}
+
+.headerlink{
+    color: white;
+    text-decoration: none;
 }
 
 .btn-group :hover .dropdown-menu{
-display: block;
+    display: block;
 }

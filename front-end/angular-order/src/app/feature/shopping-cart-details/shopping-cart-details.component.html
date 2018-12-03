@@ -1,0 +1,17 @@
+<h1>Shopping Cart</h1>
+
+<div class="list-group">
+  <div class ="product" *ngFor="let itemgroup of itemGroups">
+    <h5 class="mb-1">test</h5>
+    <p class="mb-1">Amount:</p>
+    <p class="mb-1">Price:</p>
+  </div>
+</div>
+
+<!-- <div class="list-group" *ngFor="let itemgroup of itemGroups">
+    <div *ngIf="getItemForItemGroup(itemgroup.itemId) | async as item">
+      <h5 class="mb-1">Name: {{item.name}}</h5>
+      <p class="mb-1">Amount: {{itemgroup.orderedAmount}}</p>
+      <p class="mb-1">Price: {{((calculateItemGroupPrice(itemgroup, item)))}}</p>
+    </div>
+  </div> -->
