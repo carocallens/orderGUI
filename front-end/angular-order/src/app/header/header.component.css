@@ -12,7 +12,8 @@ button.btn{
 {
     width: 100%;
     background-color: #0063B3;
-    height: 55px;
+    height: 47px;
+    z-index: 0;
 }
 
 .sticky
@@ -34,4 +35,13 @@ button.btn:hover {
 
 .btn-group :hover .dropdown-menu{
     display: block;
+}
+
+.cart{
+     float: right;
+}
+
+.cart:hover{
+    background-color: #5aaded;
+    height: 47px;
 }

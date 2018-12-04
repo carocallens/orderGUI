@@ -1,22 +1,18 @@
-h2{
+h1{
     font-family: 'Roboto', sans-serif; 
 }
 
-.container{
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-gap: 20px;
+.item-container {
+    display: flex;
 }
 
-.col{
-    border: 1px solid lightgray;
-    padding: 10px;
-    height: 95%;
-    width: 70%;
-    margin: 5%;
+.item {
+    flex: 0 1 300px;
+    flex-wrap: wrap;
+    margin: 20px;
 }
 
-.col:hover {
+.item:hover {
     background-color: lightgrey;
 }
 
@@ -34,6 +30,14 @@ h2{
 
 .itemname, .price{
     text-align: center;
+}
+
+.itemname{
+    font-size: 2em;
+}
+
+.price{
+    font-size: 1.5em;
 }
 
 .itemimage

@@ -1,13 +1,13 @@
-<h2>Items</h2>
+<h1>Items</h1>
 
-<div class="container">
-  <div *ngFor="let item of items" class="row">
-    <span class="col">
+<div class="item-container">
+  <div *ngFor="let item of items" class="item">
+    <div>
         <a routerLink="/itemdetail/{{item.id}}" class="itemlink">
-      <p class="itemname">{{item.name}}</p>
-      <img class="itemimage" src="../assets/images/order.png" />
-      <p class="price">PRICE: €{{item.price}}</p>
-    </a>
-    </span>
+          <p class="itemname">{{item.name}}</p>
+          <img class="itemimage" src="../assets/images/order.png" />
+          <p class="price">€{{item.price}}</p>
+        </a>
+    </div>
   </div>
 </div>

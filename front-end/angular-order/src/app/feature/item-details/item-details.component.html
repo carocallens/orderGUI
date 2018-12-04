@@ -1,14 +1,20 @@
-<div *ngIf="item">
-  <h2>{{item.name}}</h2>
-  <div><span>id: </span> {{item.id}}</div>
-  <div><span>name: </span> {{item.name}}</div>
-  <div><span>description: </span> {{item.description}}</div>
-  <div><span>price: </span> {{item.price}}</div>
-  <div><span>amount of stock: </span> {{item.amountOfStock}}</div>
-  <div class="form-group">
-    <label for="InputAmountOfStock">Amount</label>
-    <input type="text" [formControl] = 'itemAmount' class="form-control" id="InputAmount">
-</div>
-  <button type = "submit"><a routerLink="/itemupdate/{{item.id}}">Edit</a></button>
-  <button class = "test" (click)="addToCart()">Add to Cart</button>
+<div class="main-container">
+  <div *ngIf="item">
+    <img class="itemimage" src="../assets/images/order.png" />
+    <div class="item-description">
+      <h2>{{item.name}}</h2>
+      <div><span>id: </span> {{item.id}}</div>
+      <div> {{item.description}}</div>
+      <div class="price"><b><span>€</span> {{item.price}}</b></div>
+      <div><span>Stock:</span> {{item.amountOfStock}}</div>
+      <div class="form-group">
+        <div class="amountinput">
+          <label for="InputAmountOfStock">Amount</label>
+          <input type="text" [formControl]='itemAmount' class="form-control" id="InputAmount">
+        </div>
+        <button class="btn btn-primary" id="addToCart" (click)="addToCart()" routerLink="/shoppingcart">Add to Cart</button>
+      </div>
+      <button type="submit"><a routerLink="/itemupdate/{{item.id}}">Edit</a></button>
+    </div>
+  </div>
 </div>

@@ -1,7 +1,9 @@
 <h1>CUSTOMERS</h1>
 
+<div class = "filter">
 <input type = "text" [(ngModel)] = "customerName" placeholder="Filter by name..."/>
-<button class="btn btn-light btn-lg" type = "submit"><a routerLink = "/createcustomer">New Customer</a></button>
+<button class="btn btn-primary" id="newcustomer" type = "submit"><a routerLink = "/createcustomer">New Customer</a></button>
+</div>
 
 <div class="table-responsive">
  <table id="mytable" class="table table-bordred table-striped">

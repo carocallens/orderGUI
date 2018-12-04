@@ -8,6 +8,8 @@
         <button class="dropdown-item"><a routerLink="/createitem">Create Item</a></button>
       </div>
     </div>
-    <a routerLink='shoppingcart'><app-shopping-cart [amountOfStock]="getAmountOfItems()" [url]=""></app-shopping-cart></a>
+    <div class="cart">
+    <a routerLink='shoppingcart'><app-shopping-cart [amountOfStock]="getAmountOfItems()"></app-shopping-cart></a>
+  </div>
   </div>
 </nav>

@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+h1{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: roboto, sans-serif;
+    color: #332f2f;
+    margin-left: 10px;
+}

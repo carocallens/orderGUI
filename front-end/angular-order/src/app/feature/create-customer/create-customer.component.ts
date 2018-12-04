@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from 'src/app/core/customers/customer.service';
 import { FormGroup, FormControl } from '@angular/forms';
+import { CompileTemplateMetadata } from '@angular/compiler';
+import { stringify } from '@angular/core/src/util';
 
 @Component({
   selector: 'app-create-customer',
@@ -8,7 +10,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./create-customer.component.css']
 })
 export class CreateCustomerComponent implements OnInit {
-
+  test: string;
   customerForm = new FormGroup({
     firstName: new FormControl(),
     lastName: new FormControl(),
@@ -19,8 +21,6 @@ export class CreateCustomerComponent implements OnInit {
       country: new FormControl()
     }),
     email: new FormGroup({
-      localPart: new FormControl(),
-      domain: new FormControl(),
       complete: new FormControl()
     }),
     phoneNumber: new FormGroup({
@@ -35,7 +35,17 @@ export class CreateCustomerComponent implements OnInit {
   }
 
   createCustomer(): void{
-    this.customerService.createCustomer(this.customerForm.value)
+    this.customerService.createCustomer(this.customerForm.value, this.localPart, this.domain)
     .subscribe(customer => window.location.href = `/customerdetail/${customer.id}`);
+  }
+  
+  get localPart(){
+    this.customerForm.get("localpart").valueChanges.subscribe(date => this.test = date);
+    return this.test.split('@', 1)[0];
+  }
+
+  get domain(){
+    this.customerForm.get("localpart").valueChanges.subscribe(date => this.test = date);
+    return this.test.split('@', 1)[1];
   }
 }

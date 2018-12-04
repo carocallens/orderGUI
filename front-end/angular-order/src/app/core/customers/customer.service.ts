@@ -21,7 +21,9 @@ export class CustomerService {
     return this.http.get<Customer[]>(this.customersUrl);
   }
 
-  createCustomer(customer: Customer): Observable<Customer> {
+  createCustomer(customer: Customer, localpart: string, domain: string): Observable<Customer> {
+    customer.email.localPart = localpart;
+    customer.email.domain = domain;
     return this.http.post<Customer>(this.customersUrl, customer, httpOptions);
   }
 

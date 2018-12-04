@@ -1,0 +1,33 @@
+h1
+{
+    margin-left: 10px;
+}
+
+.filter{
+    margin: 0 auto;
+}
+
+#newcustomer{
+    background-color: #a6cb12;
+    border-color: #a6cb12;
+    margin-left: 10px;
+    color: white;
+}
+
+#newcustomer:hover {
+    background-color: #819e11;
+}
+
+#newcustomer a{
+    color: white;
+}
+
+#newcustomer a:hover{
+    text-decoration: none;
+}
+
+#mytable{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
